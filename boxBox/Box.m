@@ -30,14 +30,25 @@
      */
     float boxFits;
     
-    if (self.dimension > boxOther.dimension) {
-        boxFits = self.dimension/boxOther.dimension;
-        NSLog(@"Box Two (%f) will fit into Box One (%f) about %.02f times",boxOther.dimension,self.dimension,boxFits);
+//    if (self.dimension > boxOther.dimension) {
+//        boxFits = self.dimension/boxOther.dimension;
+//        NSLog(@"Box Two (%f) will fit into Box One (%f) about %.02f times",boxOther.dimension,self.dimension,boxFits);
+//
+//    } else if (self.dimension < boxOther.dimension) {
+//        boxFits = boxOther.dimension/self.dimension;
+//        NSLog(@"Box One (%f) will fit into Box Two (%f) about %.02f times", self.dimension,boxOther.dimension, boxFits);
+//    }
+    
+    boxFits = self.dimension/boxOther.dimension;
+    
+    if (boxFits < 1){
+        NSLog(@"Box is too big to fit into other box");
+    } else if (boxFits >=1 ){
+            NSLog(@"Box Two (%f) will fit into Box One (%f) about %.02f times",boxOther.dimension,self.dimension,boxFits);
         
-    } else if (self.dimension < boxOther.dimension) {
-        boxFits = boxOther.dimension/self.dimension;
-        NSLog(@"Box One (%f) will fit into Box Two (%f) about %.02f times", self.dimension,boxOther.dimension, boxFits);
     }
+    
+
     
 }
 
